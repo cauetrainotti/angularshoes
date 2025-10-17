@@ -1,13 +1,10 @@
-<nav class="w-full bg-purple-500 p-4 flex justify-between">
+<nav class="w-full bg-purple-500 p-4 flex items-center justify-between fixed top-0">
     <div class="text-2xl text-white font-bold">
-        SENACOMERCE
+        BEBÊ DE OURO
     </div>
-  <div class="flex gap-4">
-    <a class="text-white p-2 hover:bg-purple-700" [routerLink]="['']">Inicio</a>
-    <a class="text-white p-2 hover:bg-purple-700" [routerLink]="['portfolio']">Portfolio</a>
-    <a class="text-white p-2 hover:bg-purple-700" [routerLink]="['pai']">Pai</a>
-    <a class="text-white p-2"  routerLink="/products">Produtos</a>
-    <a class="text-white p-2">Carrinho</a>
-
+  <div class="flex gap-4 ">
+    <a class="text-white p-2" [routerLink]="['']">Inicio</a>
+    <a class="text-white p-2" [routerLink]="['produtos']">Produtos</a>
+    <a class="text-white p-2" [routerLink]="['carrinho']">Carrinho</a>
   </div>
 </nav>
