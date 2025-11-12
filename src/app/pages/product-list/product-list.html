@@ -1,7 +1,43 @@
-<app-bebedouro-card
+<section class="mt-24 flex justify-center">
+  <div
+    class="w-[12%] h-[80vh] bg-gray-200 rounded-2xl flex flex-col flex-wrap items-center border-12 border-transparent"
+  >
+    <div class="w-full h-1/3 flex-wrap">
+      <app-filtro-component>
+      </app-filtro-component>
+    </div>
+
+    <div class="w-full h-1/3">
+      <app-filtro-component> </app-filtro-component>
+    </div>
+
+    <div class="w-full h-1/3">
+      <app-filtro-component> </app-filtro-component>
+    </div>
+  </div>
+  <div class="grid grid-cols-3 gap-4 w-[40%] ml-12">
+    <app-bebedouro-card
       [titulo]="titulo"
       texto="movie.texto"
       (onRemoveClicked)="onRemoveClicked($event)"
       img="https://static1.srcdn.com/wordpress/wp-content/uploads/2024/02/longlegs-2024-movie-poster.jpg"
-      >
-</app-bebedouro-card>
+    >
+    </app-bebedouro-card>
+
+    <app-bebedouro-card
+      [titulo]="titulo"
+      texto="movie.texto"
+      (onRemoveClicked)="onRemoveClicked($event)"
+      img="https://static1.srcdn.com/wordpress/wp-content/uploads/2024/02/longlegs-2024-movie-poster.jpg"
+    >
+    </app-bebedouro-card>
+
+    <app-bebedouro-card
+      [titulo]="titulo"
+      texto="movie.texto"
+      (onRemoveClicked)="onRemoveClicked($event)"
+      img="https://static1.srcdn.com/wordpress/wp-content/uploads/2024/02/longlegs-2024-movie-poster.jpg"
+    >
+    </app-bebedouro-card>
+  </div>
+</section>

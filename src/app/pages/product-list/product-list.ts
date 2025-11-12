@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
 import { BebedouroCard } from "../../components/bebedouro-card/bebedouro-card";
+import { FiltroComponent } from "../../components/filtro-component/filtro-component";
+import { Checkbox } from "../../components/checkbox/checkbox";
 
 @Component({
   selector: 'app-product-list',
-  imports: [BebedouroCard],
+  imports: [BebedouroCard, FiltroComponent, Checkbox],
   templateUrl: './product-list.html',
   styleUrl: './product-list.scss'
 })
@@ -12,7 +14,7 @@ export class ProductList {
     onRemoveClicked(banana: string) {
     alert(banana)
   }
-
+  
   protected movies: any = [];
   protected titulo = "Oi";
   constructor() {
