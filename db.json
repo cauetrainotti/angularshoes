@@ -1,0 +1,11 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Bebedoro meme",
+      "price": 299.9,
+      "category": "Funny",
+      "image": "https://tse4.mm.bing.net/th/id/OIP.fYqs-ZSqFeifPlARyK8MagHaEa?cb=ucfimg2ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3"
+    }
+  ]
+}

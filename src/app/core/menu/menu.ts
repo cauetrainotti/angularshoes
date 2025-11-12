@@ -1,12 +1,26 @@
 import { Component } from '@angular/core';
-import { RouterLink } from "@angular/router";
+import { RouterLink } from '@angular/router';
+import { CartService } from '../services/cart';
+import { ProductType } from '../services/product';
+import { Cart } from "./cart/cart";
 
 @Component({
   selector: 'app-menu',
-  imports: [RouterLink],
+  imports: [RouterLink, Cart],
   templateUrl: './menu.html',
-  styleUrl: './menu.scss'
+  styleUrl: './menu.scss',
 })
 export class Menu {
+  protected productQtd: number = 0;
+  protected cartActive: boolean = false;
 
+  constructor(private cartService: CartService) {
+    this.cartService.cartItemsHasChanged().subscribe((products: Array<ProductType>) => {
+      this.productQtd = products.length;
+    });
+  }
+
+  protected showCart() {
+    this.cartActive = true;
+  }
 }

@@ -16,28 +16,8 @@
     </div>
   </div>
   <div class="grid grid-cols-3 gap-4 w-[40%] ml-12">
-    <app-bebedouro-card
-      [titulo]="titulo"
-      texto="movie.texto"
-      (onRemoveClicked)="onRemoveClicked($event)"
-      img="https://static1.srcdn.com/wordpress/wp-content/uploads/2024/02/longlegs-2024-movie-poster.jpg"
-    >
-    </app-bebedouro-card>
-
-    <app-bebedouro-card
-      [titulo]="titulo"
-      texto="movie.texto"
-      (onRemoveClicked)="onRemoveClicked($event)"
-      img="https://static1.srcdn.com/wordpress/wp-content/uploads/2024/02/longlegs-2024-movie-poster.jpg"
-    >
-    </app-bebedouro-card>
-
-    <app-bebedouro-card
-      [titulo]="titulo"
-      texto="movie.texto"
-      (onRemoveClicked)="onRemoveClicked($event)"
-      img="https://static1.srcdn.com/wordpress/wp-content/uploads/2024/02/longlegs-2024-movie-poster.jpg"
-    >
-    </app-bebedouro-card>
+    @for (product of products; track product) {
+      <app-bebedouro-card [product] ="product"></app-bebedouro-card>
+    }
   </div>
 </section>

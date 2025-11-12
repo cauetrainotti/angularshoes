@@ -1,0 +1,23 @@
+import { Component } from '@angular/core';
+import { CurrencyPipe } from '@angular/common';
+import { ProductOnCartType } from '../../services/product';
+import { CartService } from '../../services/cart';
+@Component({
+  selector: 'app-cart',
+  imports: [CurrencyPipe],
+  templateUrl: './cart.html',
+  styleUrl: './cart.scss',
+})
+export class Cart {
+  protected products!: ProductOnCartType[];
+  protected cartActive = false;
+  constructor(private cartService: CartService) {
+    this.cartService.cartItemsHasChanged().subscribe((products: Array<ProductOnCartType>) => {
+      this.products = products;
+    });
+  }
+
+  removeItem(productId: number) {
+    this.cartService.removeItemById(productId);
+  }
+}

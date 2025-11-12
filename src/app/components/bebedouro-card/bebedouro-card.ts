@@ -1,26 +1,20 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { ProductService, ProductType } from '../../core/services/product';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-bebedouro-card',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './bebedouro-card.html',
-  styleUrl: './bebedouro-card.scss'
+  styleUrl: './bebedouro-card.scss',
 })
 export class BebedouroCard {
   @Input()
-  public titulo: string = "";
+  public product!: ProductType;
 
-  @Input()
-  public texto: string = "";
+  constructor(private productService: ProductService) {}
 
-  @Input()
-  public img: string = "";
-
-  @Output()
-  public onRemoveClicked = new EventEmitter<string>();
-
-  onClick(titulo: string) {
-    this.onRemoveClicked.emit(titulo);
-
+  delete() {
+    this.productService.deleteProductById(this.product.id);
   }
 }

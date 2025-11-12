@@ -1,10 +1,19 @@
-<nav class="w-full bg-purple-500 p-4 flex items-center justify-between fixed top-0">
-    <div class="text-2xl text-white font-bold">
-        BEBÊ DE OURO
-    </div>
-  <div class="flex gap-4 ">
+<header class="border-b border-gray-200 flex items-center justify-between h-16">
+  <div class="text-2xl text-white font-bold">BEBÊ DE OURO</div>
+  <div class="flex gap-4">
     <a class="text-white p-2" [routerLink]="['']">Inicio</a>
     <a class="text-white p-2" [routerLink]="['produtos']">Produtos</a>
-    <a class="text-white p-2" [routerLink]="['carrinho']">Carrinho</a>
+    <button class="relative text-gray-600 hover:text-black transition-colors" (click)="showCart()">
+      <i class="las la-shopping-cart text-3xl"></i>
+
+      <span
+        class="absolute -top-1 -right-1 bg-black text-white rounded-full w-4 h-4 flex items-center justify-center text-xs"
+      >
+        {{ productQtd }}
+      </span>
+      @if(cartActive) {
+      <app-cart></app-cart>
+      }
+    </button>
   </div>
-</nav>
+</header>
